@@ -95,7 +95,7 @@ $(function () {
             { id: 10, name: 'Los Angeles' }
         ],
         type: 'multiple',
-        result_id: '#demo6-container',
+        resultId: '#demo6-container',
         itemSelected: displayResult,
         resultAdd: function(a,b){console.log('after add')},
         resultRemove: function(a,b){console.log('after remove')}

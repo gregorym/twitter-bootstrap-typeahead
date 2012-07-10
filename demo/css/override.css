@@ -1,0 +1,9 @@
+.typeahead.result {
+  list-style-type: none;
+  margin-left: 0;
+}
+
+.typeahead.result li .close {
+  padding: 2px;
+  font-size: 12px;
+} 
