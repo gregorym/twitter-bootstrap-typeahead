@@ -46,4 +46,22 @@ $(function () {
         resultRemove: function(a,b){console.log('after remove')}
     });
 
+
+    $('#demo8').typeahead({
+        source: [
+            { id: 1, name: 'Toronto', country: 'CANADA' },
+            { id: 2, name: 'Montreal', country: 'CANADA' },
+            { id: 3, name: 'New York', country: 'USA' },
+            { id: 4, name: 'Buffalo', country: 'USA' },
+            { id: 5, name: 'Boston', country: 'USA' },
+            { id: 6, name: 'Columbus', country: 'USA' },
+            { id: 7, name: 'Dallas', country: 'USA' },
+            { id: 8, name: 'Vancouver', country: 'USA' },
+            { id: 9, name: 'Seattle', country: 'USA' },
+            { id: 10, name: 'Los Angeles', country: 'USA' }],
+        type: 'multiple',
+        resultId: '#demo8-container',
+        matched: 'country'
+    });
+
 });
