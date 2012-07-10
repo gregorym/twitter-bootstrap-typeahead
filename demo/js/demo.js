@@ -117,6 +117,7 @@ $(function () {
         type: 'single',
         result_id: '#demo7-container',
         itemSelected: displayResult,
+        displayMatch: true,
         resultAdd: function(a,b){console.log('after add')},
         resultRemove: function(a,b){console.log('after remove')}
     });
