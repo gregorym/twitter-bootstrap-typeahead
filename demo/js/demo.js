@@ -115,7 +115,8 @@ $(function () {
             { id: 10, name: 'Los Angeles' }
         ],
         type: 'single',
-        result_id: '#demo7-container',
+        resultId: '#demo7-container',
+        resultItem: '<li><input type="hidden" name"user[city]" /></li>',
         itemSelected: displayResult,
         displayMatch: true,
         resultAdd: function(a,b){console.log('after add')},
