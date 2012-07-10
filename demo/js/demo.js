@@ -96,7 +96,9 @@ $(function () {
         ],
         type: 'multiple',
         result_id: '#demo6-container',
-        itemSelected: displayResult
+        itemSelected: displayResult,
+        resultAdd: function(a,b){console.log('after add')},
+        resultRemove: function(a,b){console.log('after remove')}
     });
 
 
