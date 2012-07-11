@@ -46,22 +46,23 @@ $(function () {
         resultRemove: function(a,b){console.log('after remove')}
     });
 
-
     $('#demo8').typeahead({
         source: [
-            { id: 1, name: 'Toronto', country: 'CANADA' },
-            { id: 2, name: 'Montreal', country: 'CANADA' },
-            { id: 3, name: 'New York', country: 'USA' },
-            { id: 4, name: 'Buffalo', country: 'USA' },
-            { id: 5, name: 'Boston', country: 'USA' },
-            { id: 6, name: 'Columbus', country: 'USA' },
-            { id: 7, name: 'Dallas', country: 'USA' },
-            { id: 8, name: 'Vancouver', country: 'USA' },
-            { id: 9, name: 'Seattle', country: 'USA' },
-            { id: 10, name: 'Los Angeles', country: 'USA' }],
+            { id: 1, name: 'Toronto', country: 'CANADA', continent: 'America' },
+            { id: 2, name: 'Montreal', country: 'CANADA', continent: 'America' },
+            { id: 3, name: 'New York', country: 'USA', continent: 'America' },
+            { id: 4, name: 'Buffalo', country: 'USA', continent: 'America' },
+            { id: 5, name: 'Boston', country: 'USA', continent: 'America' },
+            { id: 6, name: 'Columbus', country: 'USA', continent: 'America' },
+            { id: 7, name: 'Dallas', country: 'USA', continent: 'America' },
+            { id: 8, name: 'Vancouver', country: 'USA', continent: 'America' },
+            { id: 9, name: 'Seattle', country: 'USA', continent: 'America' },
+            { id: 10, name: 'Los Angeles', country: 'USA', continent: 'America' },
+            { id: 11, name: 'Paris', country: 'FRANCE', continent: 'Europe' }],
         type: 'multiple',
         resultId: '#demo8-container',
-        matched: 'country'
+        matched: 'country',
+        extra: 'continent'
     });
 
 });
