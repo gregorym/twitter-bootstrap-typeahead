@@ -62,7 +62,12 @@ $(function () {
         type: 'multiple',
         resultId: '#demo8-container',
         matched: 'country',
-        extra: 'continent'
+        extra: 'continent',
+        showPopup: true,
+        popupAdd: function(value){
+          $('#demo8-modal').modal();
+          $('#demo8-modal').find('.modal-body').html(value);
+        }
     });
 
 });

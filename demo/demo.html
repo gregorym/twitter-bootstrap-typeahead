@@ -9,6 +9,7 @@
     <script src="js/prettify.js" type="text/javascript"></script>
     <script src="js/jquery.min.js" type="text/javascript"></script>
     <script src="js/mockjax.js" type="text/javascript"></script>
+    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-modal.js" type="text/javascript"></script>
     <script src="../lib/bootstrap-typeahead.js" type="text/javascript"></script>
     <script src="js/demo.js" type="text/javascript"></script>
 </head>
@@ -76,26 +77,43 @@
     <div class="row">
         <div class="well span4">
             <ul id="demo8-container"></ul>
+            <div id="demo8-modal" class="well modal-example" style="display: none">
+                <div class="modal" >
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">x</button>
+                    <h3>Modal header</h3>
+                  </div>
+                  <div class="modal-body">
+                    AAA
+                  </div>
+                </div>
+            </div>
             <input id="demo8" type="text" class="span4" placeholder="Search cities..." />
         </div>
         <pre class="prettyprint span6">
-            $('#demo8').typeahead({
-                source: [
-                    { id: 1, name: 'Toronto', country: 'CANADA' },
-                    { id: 2, name: 'Montreal', country: 'CANADA' },
-                    { id: 3, name: 'New York', country: 'USA' },
-                    { id: 4, name: 'Buffalo', country: 'USA' },
-                    { id: 5, name: 'Boston', country: 'USA' },
-                    { id: 6, name: 'Columbus', country: 'USA' },
-                    { id: 7, name: 'Dallas', country: 'USA' },
-                    { id: 8, name: 'Vancouver', country: 'USA' },
-                    { id: 9, name: 'Seattle', country: 'USA' },
-                    { id: 10, name: 'Los Angeles' }
-                ],
-                type: 'multiple',
-                resultId: '#demo8-container',
-                matched: 'country'
-            });
+    $('#demo8').typeahead({
+        source: [
+            { id: 1, name: 'Toronto', country: 'CANADA', continent: 'America' },
+            { id: 2, name: 'Montreal', country: 'CANADA', continent: 'America' },
+            { id: 3, name: 'New York', country: 'USA', continent: 'America' },
+            { id: 4, name: 'Buffalo', country: 'USA', continent: 'America' },
+            { id: 5, name: 'Boston', country: 'USA', continent: 'America' },
+            { id: 6, name: 'Columbus', country: 'USA', continent: 'America' },
+            { id: 7, name: 'Dallas', country: 'USA', continent: 'America' },
+            { id: 8, name: 'Vancouver', country: 'USA', continent: 'America' },
+            { id: 9, name: 'Seattle', country: 'USA', continent: 'America' },
+            { id: 10, name: 'Los Angeles', country: 'USA', continent: 'America' },
+            { id: 11, name: 'Paris', country: 'FRANCE', continent: 'Europe' }],
+        type: 'multiple',
+        resultId: '#demo8-container',
+        matched: 'country',
+        extra: 'continent',
+        showPopup: true,
+        popupAdd: function(value){
+          $('#demo8-modal').modal();
+          $('#demo8-modal').find('.modal-body').html(value);
+        }
+    });
         </pre>
     </div>
 
