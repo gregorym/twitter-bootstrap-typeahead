@@ -5,6 +5,12 @@ function displayResult(item, val, text) {
 
 $(function () {
 
+  $.mockjax({
+        url: '/cities/new',
+        responseText: "<form class='modal'><label>demo</label><input type=text></input><button>Save</button></form>"
+    });
+
+
     $('#demo6').typeahead({
         source: [
             { id: 1, name: 'Toronto' },
@@ -63,11 +69,7 @@ $(function () {
         resultId: '#demo8-container',
         matched: 'country',
         extra: 'continent',
-        showAddValue: true,
-        popupAdd: function(value){
-          $('#demo8-modal').modal();
-          $('#demo8-modal').find('.modal-body').html(value);
-        }
+        modalUrl: '/cities/new'
     });
 
 });

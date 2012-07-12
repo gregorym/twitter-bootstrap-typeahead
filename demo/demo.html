@@ -91,29 +91,25 @@
             <input id="demo8" type="text" class="span4" placeholder="Search cities..." />
         </div>
         <pre class="prettyprint span6">
-    $('#demo8').typeahead({
-        source: [
-            { id: 1, name: 'Toronto', country: 'CANADA', continent: 'America' },
-            { id: 2, name: 'Montreal', country: 'CANADA', continent: 'America' },
-            { id: 3, name: 'New York', country: 'USA', continent: 'America' },
-            { id: 4, name: 'Buffalo', country: 'USA', continent: 'America' },
-            { id: 5, name: 'Boston', country: 'USA', continent: 'America' },
-            { id: 6, name: 'Columbus', country: 'USA', continent: 'America' },
-            { id: 7, name: 'Dallas', country: 'USA', continent: 'America' },
-            { id: 8, name: 'Vancouver', country: 'USA', continent: 'America' },
-            { id: 9, name: 'Seattle', country: 'USA', continent: 'America' },
-            { id: 10, name: 'Los Angeles', country: 'USA', continent: 'America' },
-            { id: 11, name: 'Paris', country: 'FRANCE', continent: 'Europe' }],
-        type: 'multiple',
-        resultId: '#demo8-container',
-        matched: 'country',
-        extra: 'continent',
-        showAddValue: true,
-        popupAdd: function(value){
-          $('#demo8-modal').modal();
-          $('#demo8-modal').find('.modal-body').html(value);
-        }
-    });
+            $('#demo8').typeahead({
+                source: [
+                    { id: 1, name: 'Toronto', country: 'CANADA', continent: 'America' },
+                    { id: 2, name: 'Montreal', country: 'CANADA', continent: 'America' },
+                    { id: 3, name: 'New York', country: 'USA', continent: 'America' },
+                    { id: 4, name: 'Buffalo', country: 'USA', continent: 'America' },
+                    { id: 5, name: 'Boston', country: 'USA', continent: 'America' },
+                    { id: 6, name: 'Columbus', country: 'USA', continent: 'America' },
+                    { id: 7, name: 'Dallas', country: 'USA', continent: 'America' },
+                    { id: 8, name: 'Vancouver', country: 'USA', continent: 'America' },
+                    { id: 9, name: 'Seattle', country: 'USA', continent: 'America' },
+                    { id: 10, name: 'Los Angeles', country: 'USA', continent: 'America' },
+                    { id: 11, name: 'Paris', country: 'FRANCE', continent: 'Europe' }],
+                type: 'multiple',
+                resultId: '#demo8-container',
+                matched: 'country',
+                extra: 'continent',
+                modalUrl: '/cities/new'
+            });
         </pre>
     </div>
 
