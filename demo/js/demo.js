@@ -7,9 +7,13 @@ $(function () {
 
   $.mockjax({
         url: '/cities/new',
-        responseText: "<form class='modal'><label>demo</label><input type=text></input><button>Save</button></form>"
+        responseText: "<div class='modal'><form action='/cities'><label>demo</label><input type=text></input><button>Save</button></form></div>"
     });
 
+  $.mockjax({
+        url: '/cities',
+        responseText: {id:5, name:'demo', country:'USA', continent: 'America'}
+    });
 
     $('#demo6').typeahead({
         source: [
