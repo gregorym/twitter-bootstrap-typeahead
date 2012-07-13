@@ -12,6 +12,7 @@ $(function () {
 
   $.mockjax({
         url: '/cities',
+        status: 500,
         responseText: {id:5, name:'demo', country:'USA', continent: 'America'}
     });
 
