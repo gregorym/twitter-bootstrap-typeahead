@@ -54,22 +54,21 @@ $(function () {
         resultItem: '<li><input type="hidden" name"user[city]" /></li>',
         itemSelected: displayResult,
         resultAdd: function(a,b){console.log('after add')},
-        resultRemove: function(a,b){console.log('after remove')}
+        resultRemove: function(a,b){console.log('after remove')},
+        suggestedList: [
+            { id: 11, name: 'San Francisco' },
+            { id: 12, name: 'Oakland' }]
     });
 
     $('#demo8').typeahead({
-        source: [
-            { id: 1, name: 'Toronto', country: 'CANADA', continent: 'America' },
-            { id: 2, name: 'Montreal', country: 'CANADA', continent: 'America' },
-            { id: 3, name: 'New York', country: 'USA', continent: 'America' },
-            { id: 4, name: 'Buffalo', country: 'USA', continent: 'America' },
-            { id: 5, name: 'Boston', country: 'USA', continent: 'America' },
-            { id: 6, name: 'Columbus', country: 'USA', continent: 'America' },
-            { id: 7, name: 'Dallas', country: 'USA', continent: 'America' },
-            { id: 8, name: 'Vancouver', country: 'USA', continent: 'America' },
-            { id: 9, name: 'Seattle', country: 'USA', continent: 'America' },
-            { id: 10, name: 'Los Angeles', country: 'USA', continent: 'America' },
-            { id: 11, name: 'Paris', country: 'FRANCE', continent: 'Europe' }],
+        ajax: {
+            url: "https://api.github.com/users/gregorym",
+            dataType: "jsonp",
+            preProcess: function(data) {
+                console.log(data);
+                return [{ id: 1, name: 'Toronto', country: 'CANADA', continent: 'America' }];
+            }
+        },
         type: 'multiple',
         resultId: '#demo8-container',
         matched: 'country',
